@@ -11,14 +11,6 @@
 //            
 //   OUTPUT:  edges = list of pair<int,int> in minimum spanning tree
 //            return total weight of tree
-
-#include <iostream>
-#include <queue>
-#include <cmath>
-#include <vector>
-
-using namespace std;
-
 typedef double T;
 typedef vector<T> VT;
 typedef vector<VT> VVT;

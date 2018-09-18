@@ -8,10 +8,6 @@
 //
 // OUTPUT:   triples = a vector containing m triples of indices
 //                     corresponding to triangle vertices
-
-#include<vector>
-using namespace std;
-
 typedef double T;
 
 struct triple {

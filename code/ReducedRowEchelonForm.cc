@@ -8,13 +8,6 @@
 //
 // OUTPUT:   rref[][] = an nxm matrix (stored in a[][])
 //           returns rank of a[][]
-
-#include <iostream>
-#include <vector>
-#include <cmath>
-
-using namespace std;
-
 const double EPSILON = 1e-10;
 
 typedef double T;

@@ -8,13 +8,6 @@
 //          of substring s[i...L-1] in the list of sorted suffixes.
 //          That is, if we take the inverse of the permutation suffix[],
 //          we get the actual suffix array.
-
-#include <vector>
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 struct SuffixArray {
   const int L;
   string s;

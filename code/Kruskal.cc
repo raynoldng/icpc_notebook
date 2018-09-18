@@ -7,14 +7,6 @@ forest (also calculates the actual edges - stored in T). Note: uses a
 disjoint-set data structure with amortized (effectively) constant time per
 union/find. Runs in O(E*log(E)) time.
 */
-
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-
-using namespace std;
-
 typedef int T;
 
 struct edge

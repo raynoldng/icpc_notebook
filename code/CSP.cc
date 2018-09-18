@@ -1,11 +1,4 @@
 // Constraint satisfaction problems
-
-#include <cstdlib>
-#include <iostream>
-#include <vector>
-#include <set>
-using namespace std;
-
 #define DONE   -1
 #define FAILED -2
 

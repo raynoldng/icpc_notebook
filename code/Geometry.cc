@@ -1,12 +1,4 @@
 // C++ routines for computational geometry.
-
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <cassert>
-
-using namespace std;
-
 double INF = 1e100;
 double EPS = 1e-12;
 

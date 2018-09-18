@@ -6,11 +6,6 @@
 //   OUTPUT: mr[i] = assignment for row node i, -1 if unassigned
 //           mc[j] = assignment for column node j, -1 if unassigned
 //           function returns number of matches made
-
-#include <vector>
-
-using namespace std;
-
 typedef vector<int> VI;
 typedef vector<VI> VVI;
 

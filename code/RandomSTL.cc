@@ -1,12 +1,4 @@
 // Example for using stringstreams and next_permutation
-
-#include <algorithm>
-#include <iostream>
-#include <sstream>
-#include <vector>
-
-using namespace std;
-
 int main(void){
   vector<int> v;
   

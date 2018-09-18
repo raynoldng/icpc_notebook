@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-using namespace std;
 struct UnionFind {
     vector<int> C;
     UnionFind(int n) : C(n) { for (int i = 0; i < n; i++) C[i] = i; }

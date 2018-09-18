@@ -9,14 +9,6 @@
 //            is consistent with w
 //
 // If no ordering is possible, false is returned.
-
-#include <iostream>
-#include <queue>
-#include <cmath>
-#include <vector>
-
-using namespace std;
-
 typedef double T;
 typedef vector<T> VT;
 typedef vector<VT> VVT;

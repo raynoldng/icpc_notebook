@@ -1,7 +1,3 @@
-#include <cassert>
-#include <cstdio>
-#include <cmath>
-
 struct cpx
 {
   cpx(){}

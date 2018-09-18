@@ -10,13 +10,6 @@
 // Alternatively, you can use the DFT() routine directly, which will
 // zero-pad your input to the next largest power of 2 and compute the
 // DFT or inverse DFT.
-
-#include <iostream>
-#include <vector>
-#include <complex>
-
-using namespace std;
-
 typedef long double DOUBLE;
 typedef complex<DOUBLE> COMPLEX;
 typedef vector<DOUBLE> VD;

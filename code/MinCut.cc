@@ -8,13 +8,6 @@
 //
 // OUTPUT:
 //     - (min cut value, nodes in half of min cut)
-
-#include <cmath>
-#include <vector>
-#include <iostream>
-
-using namespace std;
-
 typedef vector<int> VI;
 typedef vector<VI> VVI;
 

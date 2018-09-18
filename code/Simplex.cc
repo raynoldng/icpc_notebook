@@ -14,13 +14,6 @@
 //
 // To use this code, create an LPSolver object with A, b, and c as
 // arguments.  Then, call Solve(x).
-
-#include <iostream>
-#include <iomanip>
-#include <vector>
-#include <cmath>
-#include <limits>
-
 using namespace std;
 
 typedef long double DOUBLE;

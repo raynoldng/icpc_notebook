@@ -12,11 +12,6 @@
 //     - maximum flow value
 //     - To obtain actual flow values, look at edges with capacity > 0
 //       (zero capacity edges are residual edges).
-
-#include<cstdio>
-#include<vector>
-#include<queue>
-using namespace std;
 typedef long long LL;
 
 struct Edge {

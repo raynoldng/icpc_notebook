@@ -1,6 +1,3 @@
-#include <iostream>
-using namespace std;
-
 #define LOGSZ 17
 
 int tree[(1<<LOGSZ)+1];

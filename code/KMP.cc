@@ -3,13 +3,6 @@ Finds all occurrences of the pattern string p within the
 text string t. Running time is O(n + m), where n and m
 are the lengths of p and t, respecitvely.
 */
-
-#include <iostream>
-#include <string>
-#include <vector>
-
-using namespace std;
-
 typedef vector<int> VI;
 
 void buildPi(string& p, VI& pi)

@@ -23,12 +23,6 @@
 // To use this code, create a GraphCutInference object, and call the
 // DoInference() method.  To perform maximization instead of minimization,
 // ensure that #define MAXIMIZATION is enabled.
-
-#include <vector>
-#include <iostream>
-
-using namespace std;
-
 typedef vector<int> VI;
 typedef vector<VI> VVI;
 typedef vector<VVI> VVVI;

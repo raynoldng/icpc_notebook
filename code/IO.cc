@@ -3,6 +3,27 @@
 
 using namespace std;
 
+#define db(x) cerr << #x << "=" << x << endl
+#define db2(x, y) cerr << #x << "=" << x << "," << #y << "=" << y << endl
+#define db3(x, y, z) cerr << #x << "=" << x << "," << #y << "=" << y << "," << #z << "=" << z << endl
+
+#define LSOne(S) (S & (-S))
+
+// remove duplicated from vector
+#define UNIQUE(x) x.erase(unique(x.begin(), x.end()), x.end())
+
+// Generate all set of n elements
+unsigned next_set_n(unsigned x) {
+    unsigned smallest, ripple, new_smallest, ones;
+    if(x==0) return 0;
+    smallest = (x & -x);
+    ripple = x + smallest;
+    new_smallest = (ripple & -ripple);
+    ones = ((new_smallest/smallest) >> 1 ) - 1;
+    return ripple | ones;
+}
+
+
 int main()
 {
     // Ouput a specific number of digits past the decimal point,
@@ -23,4 +44,8 @@ int main()
     
     // Output numerical values in hexadecimal
     cout << hex << 100 << " " << 1000 << " " << 10000 << dec << endl;
+
+    // Convert int to binary string
+    cout << bitset<32>(val).to_string() << endl;
+
 }

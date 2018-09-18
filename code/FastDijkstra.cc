@@ -2,10 +2,6 @@
 // and priority queue for efficiency.
 //
 // Running time: O(|E| log |V|)
-
-#include <queue>
-#include <cstdio>
-
 using namespace std;
 const int INF = 2000000000;
 typedef pair<int, int> PII;

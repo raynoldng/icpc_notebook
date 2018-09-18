@@ -11,13 +11,6 @@
 //            prev[i] = previous node on the best path from the
 //                      start node   
 
-#include <iostream>
-#include <queue>
-#include <cmath>
-#include <vector>
-
-using namespace std;
-
 typedef double T;
 typedef vector<T> VT;
 typedef vector<VT> VVT;

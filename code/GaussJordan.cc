@@ -13,13 +13,6 @@
 // OUTPUT:   X      = an nxm matrix (stored in b[][])
 //           A^{-1} = an nxn matrix (stored in a[][])
 //           returns determinant of a[][]
-
-#include <iostream>
-#include <vector>
-#include <cmath>
-
-using namespace std;
-
 const double EPS = 1e-10;
 
 typedef vector<int> VI;

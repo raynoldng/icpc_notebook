@@ -8,8 +8,6 @@
 //    distributed
 //  - worst case for nearest-neighbor may be linear in pathological
 //    case
-//
-// Sonny Chan, Stanford University, April 2009
 // -----------------------------------------------------------------
 
 #include <iostream>

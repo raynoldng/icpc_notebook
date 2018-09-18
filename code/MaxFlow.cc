@@ -11,13 +11,6 @@
 // OUTPUT:
 //     - maximum flow value
 //     - To obtain the actual flow, look at positive values only.
-
-#include <cmath>
-#include <vector>
-#include <iostream>
-
-using namespace std;
-
 typedef vector<int> VI;
 typedef vector<VI> VVI;
 

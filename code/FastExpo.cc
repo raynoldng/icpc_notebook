@@ -3,12 +3,6 @@ Uses powers of two to exponentiate numbers and matrices. Calculates
 n^k in O(log(k)) time when n is a number. If A is an n x n matrix,
 calculates A^k in O(n^3*log(k)) time.
 */
-
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
 typedef double T;
 typedef vector<T> VT;
 typedef vector<VT> VVT;

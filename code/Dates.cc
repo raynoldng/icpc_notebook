@@ -2,12 +2,6 @@
 // months are expressed as integers from 1 to 12, days are expressed
 // as integers from 1 to 31, and years are expressed as 4-digit
 // integers.
-
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 string dayOfWeek[] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
 
 // converts Gregorian date to integer (Julian day number)

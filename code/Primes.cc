@@ -1,5 +1,4 @@
 // O(sqrt(x)) Exhaustive Primality Test
-#include <cmath>
 #define EPS 1e-7
 typedef long long LL;
 bool IsPrimeSlow (LL x)
@@ -30,22 +29,22 @@ bool IsPrimeSlow (LL x)
 //    829   839   853   857   859   863   877   881   883   887   907   911
 //    919   929   937   941   947   953   967   971   977   983   991   997
 
-// Other primes:
-//    The largest prime smaller than 10 is 7.
-//    The largest prime smaller than 100 is 97.
-//    The largest prime smaller than 1000 is 997.
-//    The largest prime smaller than 10000 is 9973.
-//    The largest prime smaller than 100000 is 99991.
-//    The largest prime smaller than 1000000 is 999983.
-//    The largest prime smaller than 10000000 is 9999991.
-//    The largest prime smaller than 100000000 is 99999989.
-//    The largest prime smaller than 1000000000 is 999999937.
-//    The largest prime smaller than 10000000000 is 9999999967.
-//    The largest prime smaller than 100000000000 is 99999999977.
-//    The largest prime smaller than 1000000000000 is 999999999989.
-//    The largest prime smaller than 10000000000000 is 9999999999971.
-//    The largest prime smaller than 100000000000000 is 99999999999973.
-//    The largest prime smaller than 1000000000000000 is 999999999999989.
-//    The largest prime smaller than 10000000000000000 is 9999999999999937.
-//    The largest prime smaller than 100000000000000000 is 99999999999999997.
-//    The largest prime smaller than 1000000000000000000 is 999999999999999989.
+// Other primes: largest prime smaller than X is Y
+//    10 is 7.
+//    100 is 97.
+//    1000 is 997.
+//    10000 is 9973.
+//    100000 is 99991.
+//    1000000 is 999983.
+//    10000000 is 9999991.
+//    100000000 is 99999989.
+//    1000000000 is 999999937.
+//    10000000000 is 9999999967.
+//    100000000000 is 99999999977.
+//    1000000000000 is 999999999989.
+//    10000000000000 is 9999999999971.
+//    100000000000000 is 99999999999973.
+//    1000000000000000 is 999999999999989.
+//    10000000000000000 is 9999999999999937.
+//    100000000000000000 is 99999999999999997.
+//    1000000000000000000 is 999999999999999989.
