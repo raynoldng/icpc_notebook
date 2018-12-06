@@ -4,7 +4,7 @@
 #   [filename within code directory][tab character \t][subsection title]
 
 [Combinatorial optimization]
-#MaxFlow.cc	Dense max-flow
+MaxFlow.cc	Dense max-flow
 Dinic.cc	Sparse max-flow
 MinCostMaxFlow.cc	Min-cost max-flow
 PushRelabel.cc	Push-relabel max-flow	
@@ -14,14 +14,19 @@ MinCut.cc	Global min-cut
 GraphCutInference.cc	Graph cut inference
 #MaxFlow.java	Max-flow (Java)
 #MinCostMaxFlow.java	Min-cost max-flow (Java)
+general-matching.cpp	General Matching
+stablemp.cpp	Stable Marriage Problem
 
 [Geometry]
 ConvexHull.cc	Convex hull
 Geometry.cc	Miscellaneous geometry
+AreaPolygon.cc	Area of Polygon
 JavaGeometry.java	Java geometry
 Geom3D.java	3D geometry
 Delaunay.cc	Slow Delaunay triangulation
+closest_pair.cpp	Closest Pair
 #Delaunay.java	Slow Delaunay triangulation (Java)
+rotating_calipers.cpp	Rotating Caliphers
 
 [Numerical algorithms]
 Euclid.cc	Number theory (modular, Chinese remainder, linear Diophantine)
@@ -33,36 +38,41 @@ Simplex.cc	Simplex algorithm
 
 [Graph algorithms]
 #BellmanFord.cc	Bellman-Ford shortest paths with negative edge weights (C++)
-#DijkstraFloyd.cc	Dijkstra and Floyd's algorithm (C++)
+DijkstraFloyd.cc	Dijkstra and Floyd's algorithm (C++)
 FastDijkstra.cc	Fast Dijkstra's algorithm
 SCC.cc	Strongly connected components
 EulerianPath.cc	Eulerian path
-#Kruskal.cc	Kruskal's algorithm
-#Prim.cc	Minimum spanning trees
+Kruskal.cc	Kruskal's algorithm
+Prim.cc	Minimum spanning trees
 
 [Data structures]
 SuffixArray.cc	Suffix array
 BIT.cc	Binary Indexed Tree
-UnionFind.cc	Union-find set
+BIT2D.cc	2D Binary Indexed Tree 
+UnionFind.cc	Union-find SegmentTreeLazy
 KDTree.cc	KD-tree
 splay.cc	Splay tree
 SegmentTreeLazy.java	Lazy segment tree
 LCA.cc	Lowest common ancestor
+SparseTable.cc	Sparse Table
 
 [Miscellaneous]
+NiftyTricks.cc	Nifty Tricks
+IO.cc	C++ input/output
 LongestIncreasingSubsequence.cc	Longest increasing subsequence
+MedianMinMaxHeap.cc	Median Max/Min Heap
 Dates.cc	Dates
 LogLan.java	Regular expressions
 Primes.cc	Prime numbers
-IO.cc	C++ input/output
+MillerRabin.cc	Miller-Rabin Primality Test (C)
 KMP.cc	Knuth-Morris-Pratt
 LatLong.cc	Latitude/longitude
-EmacsSettings.txt	Emacs settings
-#TopologicalSort.cc	Topological sort (C++)
+#EmacsSettings.txt	Emacs settings
+TopologicalSort.cc	Topological sort (C++)
 #Dates.java	Dates (Java)
 #DecFormat.java	Decimal output formatting (Java)
-#RandomSTL.cc	Random STL stuff
-#CSP.cc	Constraint satisfaction problems
-#FastExpo.cc	Fast exponentiation
-#LCS.cc	Longest common subsequence
-#MillerRabin.c	Miller-Rabin Primality Test (C)
+RandomSTL.cc	Random STL stuff
+CSP.cc	Constraint satisfaction problems
+FastExpo.cc	Fast exponentiation
+LCS.cc	Longest common subsequence
+BinarySearch.cc	Binary Search

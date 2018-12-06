@@ -1,18 +1,59 @@
-// O(sqrt(x)) Exhaustive Primality Test
-#define EPS 1e-7
-typedef long long LL;
-bool IsPrimeSlow (LL x)
-{
-  if(x<=1) return false;
-  if(x<=3) return true;
-  if (!(x%2) || !(x%3)) return false;
-  LL s=(LL)(sqrt((double)(x))+EPS);
-  for(LL i=5;i<=s;i+=6)
-  {
-    if (!(x%i) || !(x%(i+2))) return false;
-  }
-  return true;
+typedef unsigned long long ll;
+typedef vector<ll> vll;
+typedef vector<int> vi;
+
+ll _sieve_size;
+bitset<10000010> bs;
+vll primes;
+
+void sieve(ll upper) {
+    _sieve_size = upper + 1;
+    bs.set(); // set all to one
+    bs[0] = bs[1] = 0;
+    for(ll i = 2; i < _sieve_size; i++) if (bs[i]) {
+            for(ll j = i*i; j < _sieve_size; j+= i) {
+                bs[j] = 0;
+            }
+            primes.push_back((int) i);
+        }
 }
+
+bool isPrime(ll n) {
+    if (n <= _sieve_size) return bs[n];
+    for(int i = 0; i < (int) primes.size(); i++) {
+        if (n % primes[i] == 0) return false;
+        if (primes[i] * primes[i] > n) return true;
+    }
+    return true;
+}
+
+bool isPrime_slow(ll n) {
+    if(n < 2) return false;
+    if(n == 2 || n == 3) return true;
+    if(n % 2 == 0 || n % 3 == 0) return false;
+    int limit = sqrt(n);
+    for(int i = 5; i <= limit; i += 6) {
+        if(n % i == 0 || n % (i+2) == 0)
+            return false;
+    }
+    return true;
+}
+
+
+vi primeFactors(ll N) {
+    vi factors;
+    ll PF_index = 0; ll PF = primes[PF_index];
+    while(PF*PF <= N) {
+        while(N%PF == 0) {
+            N /= PF; factors.push_back(PF);
+        }
+        PF = primes[++PF_index];
+    }
+    if(N != 1) factors.push_back(N);
+    return factors;
+}
+
+
 // Primes less than 1000:
 //      2     3     5     7    11    13    17    19    23    29    31    37
 //     41    43    47    53    59    61    67    71    73    79    83    89
