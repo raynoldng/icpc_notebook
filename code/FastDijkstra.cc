@@ -1,64 +1,49 @@
-// Implementation of Dijkstra's algorithm using adjacency lists
-// and priority queue for efficiency.
-//
-// Running time: O(|E| log |V|)
-using namespace std;
-const int INF = 2000000000;
-typedef pair<int, int> PII;
+int V, E, s, u, v, w;
+vector<vii> AdjList;
 
 int main() {
+    cin>>V>>E>>s;
+    AdjList.assign(V, vii());
+    int u,v,w;
+    for(int i = 0; i < E; i++) {
+        cin>>u>>v>>w;
+        AdjList[u].push_back(ii(v, w));
+    }
+    // Dijkstra routine
+    vi dist(V, INF); dist[s] = 0;
+    // distance, node
+    priority_queue<ii, vector<ii>, greater<ii> > pq;
+    pq.push(ii(0,s));
 
-	int N, s, t;
-	scanf("%d%d%d", &N, &s, &t);
-	vector<vector<PII> > edges(N);
-	for (int i = 0; i < N; i++) {
-		int M;
-		scanf("%d", &M);
-		for (int j = 0; j < M; j++) {
-			int vertex, dist;
-			scanf("%d%d", &vertex, &dist);
-			edges[i].push_back(make_pair(dist, vertex)); // note order of arguments here
-		}
-	}
+    while(!pq.empty()) {
+        ii front = pq.top(); pq.pop();
+        int d = front.first, u = front.second;
+        if (d > dist[u]) continue; // handle duplicates
+        for(int j = 0; j < (int) AdjList[u].size(); j++) {
+            ii v = AdjList[u][j];
+            if(dist[u] + v.second < dist[v.first]) {
+                dist[v.first] = dist[u] + v.second;
+                pq.push(ii(dist[v.first], v.first));
+            }
+        }
+    }
 
-	// use priority queue in which top element has the "smallest" priority
-	priority_queue<PII, vector<PII>, greater<PII> > Q;
-	vector<int> dist(N, INF), dad(N, -1);
-	Q.push(make_pair(0, s));
-	dist[s] = 0;
-	while (!Q.empty()) {
-		PII p = Q.top();
-		Q.pop();
-		int here = p.second;
-		if (here == t) break;
-		if (dist[here] != p.first) continue;
+    // SPFA (Faster Bellman Ford)
+    queue<int> q; q.push(S);
+    vi in_queue(n, 0); in_queue[S] = 1;
 
-		for (vector<PII>::iterator it = edges[here].begin(); it != edges[here].end(); it++) {
-			if (dist[here] + it->first < dist[it->second]) {
-				dist[it->second] = dist[here] + it->first;
-				dad[it->second] = here;
-				Q.push(make_pair(dist[it->second], it->second));
-			}
-		}
-	}
-
-	printf("%d\n", dist[t]);
-	if (dist[t] < INF)
-		for (int i = t; i != -1; i = dad[i])
-			printf("%d%c", i, (i == s ? '\n' : ' '));
-	return 0;
+    while(!q.empty()) {
+        int u = q.front(); q.pop(); in_queue[u] = 0;
+        for(auto v : AdjList[u]) {
+            if(dist[u] + v.second < dist[v.first]) {
+                dist[v.first] = dist[u] + v.second;
+                if (!in_queue[v.first]) {
+                    q.push(v.first);  // add to queue only if it's not in queue
+                    in_queue[v.first] = 1;
+                }
+            }
+        }
+     }
+ 
 }
 
-/*
-Sample input:
-5 0 4
-2 1 2 3 1
-2 2 4 4 5
-3 1 4 3 3 4 1
-2 0 1 2 3
-2 1 5 2 1
-
-Expected:
-5
-4 2 3 0
-*/
