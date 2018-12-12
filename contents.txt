@@ -13,6 +13,7 @@ PushRelabel.cc	Push-relabel max-flow
 MaxBipartiteMatching.cc	Max bipartite matching
 GraphCutInference.cc	Graph cut inference
 general-matching.cpp	General Matching
+edmond_blossom.cpp	Edmond Blossom Matching
 min_edge_cover.cpp	Min Edge Cover
 stablemp.cpp	Stable Marriage Problem
 

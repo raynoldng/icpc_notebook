@@ -102,3 +102,145 @@ int main() {
 // BEGIN CUT
 #endif
 // END CUT
+
+
+// Yan Hao's Implementation
+#include <bits/stdc++.h>
+using namespace std;
+
+#define all(o) (o).begin(), (o).end()
+#define allr(o) (o).rbegin(), (o).rend()
+const int INF = 2147483647;
+typedef long long ll;
+typedef pair<int, int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+typedef vector<vi> vvi;
+typedef vector<vii> vvii;
+template <class T> int size(T &x) { return x.size(); }
+
+// assert or gtfo
+
+struct suffix_array {
+    struct entry {
+        pair<int, int> nr;
+        int p;
+
+        bool operator <(const entry &other) const {
+            return nr < other.nr;
+        }
+    };
+
+    string s;
+    int n;
+    vector<vector<int> > P;
+    vector<entry> L;
+    vector<int> idx;
+
+    suffix_array(string _s) : s(_s), n(s.size()) {
+        L = vector<entry>(n);
+        P.push_back(vector<int>(n));
+        idx = vector<int>(n);
+
+        for (int i = 0; i < n; i++) {
+            P[0][i] = s[i];
+        }
+
+        for (int stp = 1, cnt = 1; (cnt >> 1) < n; stp++, cnt <<= 1) {
+            P.push_back(vector<int>(n));
+            for (int i = 0; i < n; i++) {
+                L[i].p = i;
+                L[i].nr = make_pair(P[stp - 1][i],
+                        i + cnt < n ? P[stp - 1][i + cnt] : -1);
+            }
+
+            sort(L.begin(), L.end());
+            for (int i = 0; i < n; i++) {
+                if (i > 0 && L[i].nr == L[i - 1].nr) {
+                    P[stp][L[i].p] = P[stp][L[i - 1].p];
+                } else {
+                    P[stp][L[i].p] = i;
+                }
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            idx[P[P.size() - 1][i]] = i;
+        }
+    }
+
+    int lcp(int x, int y) {
+        int res = 0;
+        if (x == y) return n - x;
+        for (int k = P.size() - 1; k >= 0 && x < n && y < n; k--) {
+            if (P[k][x] == P[k][y]) {
+                x += 1 << k;
+                y += 1 << k;
+                res += 1 << k;
+            }
+        }
+        return res;
+    }
+
+    int longestRepeatedSubsequence() {
+        int ans=0;
+        for(int i=1; i<n; i++) {
+            ans = max(ans, lcp(idx[i-1], idx[i]));
+        }
+        return ans;
+    }
+};
+
+int main() {
+    while(true) {
+        string x,y;
+        getline(cin, x);
+        getline(cin, y);
+        y.push_back('$');
+        if(!cin.good()) break;
+        suffix_array sa(y);
+        //do binary search
+        int low = 0;
+        int high = y.length();
+        while(high-low>1) {
+            int mid = (high+low)/2;
+            int z = sa.idx[mid];
+            for(int i=0; i<x.length() && z+i<y.length(); i++) {
+                if(x[i]<y[z+i]) {
+                    high=mid; break;
+                } else if(x[i]>y[z+i]) {
+                    low=mid; break;
+                }
+            }
+            if(high!=mid && low!=mid) {
+                high=mid;
+            }
+        }
+        int low2 = 0;
+        int high2 = y.length();
+        while(high2-low2>1) {
+            int mid = (high2+low2)/2;
+            int z = sa.idx[mid];
+            for(int i=0; i<x.length() && z+i<y.length(); i++) {
+                if(x[i]<y[z+i]) {
+                    high2=mid; break;
+                } else if(x[i]>y[z+i]) {
+                    low2=mid; break;
+                }
+            }
+            if(high2!=mid && low2!=mid) {
+                low2=mid;
+            }
+        }
+        vector<int> ans;
+        for(int i=low+1; i<=low2; i++) {
+            ans.push_back(sa.idx[i]);
+        }
+        sort(ans.begin(), ans.end());
+        for(int v: ans) {
+            cout << v << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
